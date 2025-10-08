@@ -1,30 +1,37 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+using System.Collections.Generic;
 
 public class TapToPlace : MonoBehaviour
 {
     public GameObject objectToPlace;
     private ARRaycastManager raycastManager;
-    private static List<ARRaycastHit> hits = new();
+    private List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
-    void Awake()
+    void Start()
     {
-        raycastManager = GetComponent<ARRaycastManager>();
+        raycastManager = FindObjectOfType<ARRaycastManager>();
     }
 
     void Update()
     {
-        if (Input.touchCount == 0) return;
-
-        var touch = Input.GetTouch(0);
-        if (touch.phase != TouchPhase.Began) return;
-
-        if (raycastManager.Raycast(touch.position, hits, TrackableType.PlaneWithinPolygon))
+        if (Input.touchCount > 0)
         {
-            var pose = hits[0].pose;
-            Instantiate(objectToPlace, pose.position, pose.rotation);
+            Touch touch = Input.GetTouch(0);
+
+            if (touch.phase == TouchPhase.Began)
+            {
+                if (raycastManager.Raycast(touch.position, hits, TrackableType.PlaneWithinPolygon))
+                {
+                    Pose hitPose = hits[0].pose;
+
+                    if (objectToPlace != null)
+                    {
+                        Instantiate(objectToPlace, hitPose.position, hitPose.rotation);
+                    }
+                }
+            }
         }
     }
 }
