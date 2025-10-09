@@ -1,21 +1,19 @@
 ﻿<Properties StartupConfiguration="{27BCC3C7-C3A2-027C-E03F-78B42E65F2F6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/ARCameraBackground.shader">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/WalkManager.cs">
     <Files>
       <File FileName="Assets/Scripts/TapToPlace.cs" Line="37" Column="2" />
       <File FileName="Assets/Scripts/ARCameraBackgroundFixer.cs" Line="31" Column="1" />
       <File FileName="Assets/Scripts/EnableARCameraFeed.cs" Line="27" Column="2" />
       <File FileName="Assets/Scripts/ForceARStart.cs" Line="29" Column="2" />
       <File FileName="Assets/ARCameraBackground.shader" Line="48" Column="1" />
+      <File FileName="Assets/Scripts/MainMenu.cs" Line="18" Column="2" />
+      <File FileName="Assets/Scripts/SceneFader.cs" Line="53" Column="2" />
+      <File FileName="Assets/Scripts/WalkManager.cs" Line="46" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="WalkFriend" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True" />
-              <Node name="ARCameraBackground.shader" selected="True" />
-            </Node>
-          </Node>
+          <Node name="WalkFriend" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
