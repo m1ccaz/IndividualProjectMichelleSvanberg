@@ -119,37 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &15988430
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 15988431}
-  m_Layer: 0
-  m_Name: TapToPlace
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &15988431
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15988430}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.27640656, y: -0.13055828, z: 1.4743335}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &107766763
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,7 +610,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1312965982}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -9220976954229347101, guid: d5c70148540e1428982986bf1ee0c177, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1657,11 +1626,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d5c70148540e1428982986bf1ee0c177, type: 3}
   m_PrefabInstance: {fileID: 172470408}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &536156699 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d5c70148540e1428982986bf1ee0c177, type: 3}
-  m_PrefabInstance: {fileID: 172470408}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &536156700
 Animator:
   serializedVersion: 7
@@ -2127,7 +2091,6 @@ GameObject:
   - component: {fileID: 1312965981}
   - component: {fileID: 1312965980}
   - component: {fileID: 1312965979}
-  - component: {fileID: 1312965978}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -2135,19 +2098,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1312965978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1312965977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b285416d643a3485182e4caf42b0e8ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToPlace: {fileID: 919132149155446097, guid: d5c70148540e1428982986bf1ee0c177, type: 3}
 --- !u!114 &1312965979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2196,7 +2146,7 @@ MonoBehaviour:
   m_Camera: {fileID: 1322828015}
   m_OriginBaseGameObject: {fileID: 1312965977}
   m_CameraFloorOffsetObject: {fileID: 1328178881}
-  m_RequestedTrackingOriginMode: 0
+  m_RequestedTrackingOriginMode: 1
   m_CameraYOffset: 1.1176
 --- !u!4 &1312965982
 Transform:
@@ -2212,7 +2162,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1328178882}
-  - {fileID: 536156699}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1322828008
@@ -2972,8 +2921,8 @@ SceneRoots:
   - {fileID: 1387743490}
   - {fileID: 2071373385}
   - {fileID: 1312965982}
+  - {fileID: 172470408}
   - {fileID: 853351455}
-  - {fileID: 15988431}
   - {fileID: 1172689201}
   - {fileID: 953944472}
   - {fileID: 1527995825}
