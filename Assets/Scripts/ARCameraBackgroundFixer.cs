@@ -1,31 +1,35 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.XR.ARFoundation;
+using UnityEngine.XR.ARSubsystems;
 
 [RequireComponent(typeof(ARCameraBackground))]
 public class ARCameraBackgroundFixer : MonoBehaviour
 {
-    ARCameraBackground arBackground;
+    private ARCameraBackground arBackground;
+    private Camera cam;
 
-    void Start()
+    void Awake()
     {
         arBackground = GetComponent<ARCameraBackground>();
-        InvokeRepeating(nameof(ForceEnableBackground), 0.5f, 2f);
+        cam = GetComponent<Camera>();
     }
 
-    void ForceEnableBackground()
+    void OnEnable()
     {
-        if (arBackground != null && !arBackground.enabled)
+        // Tvingar URP att uppdatera AR-bakgrunden varje frame
+        if (arBackground != null)
         {
-            Debug.Log("🔧 Restarting ARCameraBackground");
+            arBackground.useCustomMaterial = false;
+            arBackground.enabled = false;
             arBackground.enabled = true;
+            Debug.Log("✅ AR Camera Background manually restarted.");
         }
 
-        // Säkerställ att kamerans clear-flags är korrekt
-        var cam = GetComponent<Camera>();
         if (cam != null)
         {
-            cam.clearFlags = CameraClearFlags.Nothing;
+            cam.clearFlags = CameraClearFlags.Depth;
+            cam.backgroundColor = Color.black;
         }
     }
 }
-
